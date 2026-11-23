@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+body {
+  background-image: url(images/reflection.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .7);
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  min-height: 80px;
+}
+.navbar-toggler {
+  border-color: #f2d686;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-toggler-icon{
+  background-image: url(images/button.svg);
+  color: #f2d686;
+}
+.navbar-toggler:focus {
+  color: #f2d686;
+  outline: none;
+  }
+.navbar-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.navbar-brand u {
+  display: inline-block;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px ;
+  color: #f2d686;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+.navbar .nav-link {
+  position: relative;
+  display: block;
+  padding: 10px 18px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+.navbar .nav-link:hover {
+color: #f2d686;
+}
+.navbar .nav-link.active {
+  color: #f2d686;
+}
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+  content: " ";
+  position: absolute;
+  bottom: 4px;
+  height: 2px;
+  background: #f2d686;
+  width: 60%;
+  left: 20%;
+}
+/* Sections */
+html {
+    scroll-behavior: smooth;
+  }
+.reflection-container {
+    margin-top: 120px;
+}
+.reflection-header h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 700;
+}
+.grid-box-reflection {
+
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+.modules h2 {
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    margin: 0 50px 0 50px;
+}
+/* Summary of Reflection */
+.reflection-summary-box {
+    background-color: rgba(27, 27, 27, 0.5);
+    margin: 20px 50px 20px 50px;
+    padding: 60px;
+    align-items: center;
+    justify-content: center;
+}
+.reflection-summary-box p {
+    color:#ffffff ;
+    font-size: 25px;
+    text-align: justify;
+    display: none;
+}
+.toggle-module {
+    display: none;
+}
+#module-1:checked ~ .reflection-summary-box .content-1,
+#module-2:checked ~ .reflection-summary-box .content-2,
+#module-3:checked ~ .reflection-summary-box .content-3,
+#module-4:checked ~ .reflection-summary-box .content-4 {
+    display: block;
+}
+.toggle-module-target {
+  cursor: pointer;
+}
+.toggle-module-target:hover h2{
+  color: #f2d686;
+  
+  text-decoration: underline;
+}
+.toggle-module-target {
+  cursor: pointer;
+}
+.toggle-module-target:hover h2{
+  color: #f2d686;
+  text-decoration: underline;
+}
+#module-1:checked ~ .grid-box-reflection label[for="module-1"] h2,
+#module-2:checked ~ .grid-box-reflection label[for="module-2"] h2,
+#module-3:checked ~ .grid-box-reflection label[for="module-3"] h2,
+#module-4:checked ~ .grid-box-reflection label[for="module-4"] h2 {
+  color: #f2d686;
+  text-decoration: underline;
+}
+@media screen and (max-width: 768px) { 
+.navbar-brand u {
+    font-size: 15px;
+}    
+.reflection-container {
+    margin-top: 0;
+    padding: 115px 15px 40px;
+    width: 100%;
+}
+.reflection-header h2 {
+    font-size: 34px;
+    text-align: center;
+}
+.grid-box-reflection {
+    margin-top: 25px;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    justify-items: center;   
+}
+  .modules {
+    width: 100%;
+    text-align: center;      
+}
+.toggle-module-target {
+    display: inline-block;  
+    width: 100%;
+    text-align: center;
+}
+.modules h2 {
+    font-size: 22px;
+    margin: 0;
+    text-align: center;
+}
+.reflection-summary-box {
+    margin: 20px 0;
+    padding: 20px;
+    width: 100%;
+}
+.reflection-summary-box p {
+    font-size: 16px;
+    text-align: left;
+  }
+}
